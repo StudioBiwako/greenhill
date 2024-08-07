@@ -14,3 +14,11 @@ func _process(delta):
 func _on_load_intro_pressed():
 	print("loading into screen")
 	pass # Replace with function body.
+
+
+func _on_load_house_pressed():
+	pass # Replace with function body.
+
+
+func _on_load_sound_test_pressed():
+	pass # Replace with function body.

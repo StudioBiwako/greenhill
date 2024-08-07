@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmyhr12l4xrkv"]
+[gd_scene load_steps=4 format=3 uid="uid://dmyhr12l4xrkv"]
 
-[ext_resource type="Script" path="res://MainMenu.gd" id="1_h7008"]
+[ext_resource type="Script" path="res://levels/main_menu/scripts/MainMenu.gd" id="1_am3f0"]
+[ext_resource type="FontFile" uid="uid://cghprndmqayw3" path="res://commons/fonts/font.ttf" id="2_tf514"]
+
+[sub_resource type="Theme" id="Theme_wql74"]
+default_font = ExtResource("2_tf514")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -9,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_h7008")
+script = ExtResource("1_am3f0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -31,6 +35,7 @@ text = "Load Scene Intro"
 
 [node name="Load_House" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_wql74")
 text = "Load Scene DORM"
 
 [node name="Load_Sound_Test" type="Button" parent="VBoxContainer"]
@@ -38,3 +43,5 @@ layout_mode = 2
 text = "Load Scene Sound_Test"
 
 [connection signal="pressed" from="VBoxContainer/Load_Intro" to="." method="_on_load_intro_pressed"]
+[connection signal="pressed" from="VBoxContainer/Load_House" to="." method="_on_load_house_pressed"]
+[connection signal="pressed" from="VBoxContainer/Load_Sound_Test" to="." method="_on_load_sound_test_pressed"]
