@@ -15,6 +15,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_am3f0")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -23,9 +28,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -94.0
-offset_top = -50.5
+offset_top = -66.5
 offset_right = 94.0
-offset_bottom = 50.5
+offset_bottom = 66.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -42,6 +47,16 @@ text = "Load Scene DORM"
 layout_mode = 2
 text = "Load Scene Sound_Test"
 
+[node name="Load_3D_car_Test" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Car Intro Sceeen"
+
+[node name="Load_Alanna_comic_test" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Comic Book Test"
+
 [connection signal="pressed" from="VBoxContainer/Load_Intro" to="." method="_on_load_intro_pressed"]
 [connection signal="pressed" from="VBoxContainer/Load_House" to="." method="_on_load_house_pressed"]
 [connection signal="pressed" from="VBoxContainer/Load_Sound_Test" to="." method="_on_load_sound_test_pressed"]
+[connection signal="pressed" from="VBoxContainer/Load_3D_car_Test" to="." method="_on_load_3D_car_test"]
+[connection signal="pressed" from="VBoxContainer/Load_Alanna_comic_test" to="." method="_on_load_alanna_comicbook_test"]
