@@ -10,8 +10,8 @@ files are broken into
 	- contains various reusable non-sceen files (fonts etc.)
 - levels
 	- self explanatory 
-- scenes
-	- game assests
+- components
+	- game assests (this ts components)
 	
 	
 
