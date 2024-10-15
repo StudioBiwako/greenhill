@@ -33,5 +33,6 @@ func _on_load_3D_car_test():
 	
 func _on_load_alanna_comicbook_test():
 	print("loading comicbook test screen")
+	get_tree().change_scene_to_file("res://levels/shader_test/shader_test.tscn")
 	pass 
 

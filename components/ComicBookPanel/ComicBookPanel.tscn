@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6fv8ygr58viq"]
+
+[ext_resource type="Script" path="res://components/ComicBookPanel/ComicBookPanel.gd" id="1_l5kjx"]
+
+[node name="ComicBookPanel" type="Node3D"]
+script = ExtResource("1_l5kjx")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]

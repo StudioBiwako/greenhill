@@ -51,4 +51,4 @@ position = Vector2(22, 2.08165e-12)
 scale = Vector2(0.891011, 0.844512)
 sprite_frames = SubResource("SpriteFrames_2tbrb")
 animation = &"playIntroAni"
-frame_progress = 0.0728971
+frame_progress = 0.59166

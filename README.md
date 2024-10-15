@@ -11,7 +11,7 @@ files are broken into
 - levels
 	- self explanatory 
 - components
-	- game assests (this ts components)
+	- game assests (think ts components)
 	
 	
 
