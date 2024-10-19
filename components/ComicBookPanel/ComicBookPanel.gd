@@ -5,7 +5,7 @@ extends Node3D
 func setImageTexture(newTexture: Texture2D):
 	$Sprite3D.texture = newTexture
 
-
+  
 func _ready():
 	print("ready")
 	$Sprite3D.texture = comicTexture
