@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cc5tcvmhfg74c" path="res://components/Models/TestPlane/plane.tscn" id="1_7i035"]
 [ext_resource type="PackedScene" uid="uid://bhq8bb1ua5bhd" path="res://components/Models/Sedan/sedan.tscn" id="2_1t4in"]
-[ext_resource type="Script" path="res://levels/carShaderArtTest/Camera3D.gd" id="3_jx370"]
+[ext_resource type="PackedScene" uid="uid://m8mqr5fyqgje" path="res://components/Cameras/centerCamera/CenterCamera.tscn" id="3_sg6c3"]
 
 [node name="CarShaderArtTest" type="Node3D"]
 
@@ -16,10 +16,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.0
 
 [node name="sedan" parent="." instance=ExtResource("2_1t4in")]
 transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, 2.08165e-12, 2.08165e-12)
-visible = false
 
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("centerObject")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1811, 4.57056)
-visible = false
-script = ExtResource("3_jx370")
+[node name="CenterCamera" parent="." node_paths=PackedStringArray("centerObject") instance=ExtResource("3_sg6c3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53852, 0.0146324, 2.58451)
 centerObject = NodePath("../sedan")
