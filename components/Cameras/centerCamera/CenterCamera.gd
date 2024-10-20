@@ -25,7 +25,7 @@ func _input(event):
 			# Clamp vertical angle
 			var maxAngleRad = deg_to_rad(maxVerticalAngle)
 			var minAngleRad = deg_to_rad(minVerticalAngle)
-			orbitAngleVertical = clamp(orbitAngleVertical, minAngleRad, maxAngleRad)
+			orbitAngleVertical = clampf(orbitAngleVertical, minAngleRad, maxAngleRad)
 			
 			updateCameraPosition()
 
