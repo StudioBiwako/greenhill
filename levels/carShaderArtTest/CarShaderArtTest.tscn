@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dht3itt6v8jic"]
+[gd_scene load_steps=15 format=3 uid="uid://dht3itt6v8jic"]
 
 [ext_resource type="PackedScene" uid="uid://cc5tcvmhfg74c" path="res://components/Models/TestPlane/plane.tscn" id="1_7i035"]
 [ext_resource type="PackedScene" uid="uid://bhq8bb1ua5bhd" path="res://components/Models/Sedan/sedan.tscn" id="2_1t4in"]
@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://cxacmgyxadq2k" path="res://components/Models/Trees/GLTF format/fence.glb" id="5_k4pm8"]
 [ext_resource type="PackedScene" uid="uid://bvtg2apc0jv8c" path="res://components/Models/Trees/GLTF format/tree.glb" id="6_tn2hy"]
 [ext_resource type="PackedScene" uid="uid://dskjo0p3unb6r" path="res://components/Models/Trees/GLTF format/lantern.glb" id="7_1nb3e"]
+[ext_resource type="PackedScene" uid="uid://duoh08dg2jt7k" path="res://components/Models/Trees/GLTF format/treeHigh.glb" id="8_chcwm"]
+[ext_resource type="PackedScene" uid="uid://4tw12oj1slch" path="res://components/Models/Trees/GLTF format/treeCrooked.glb" id="9_g54ct"]
+[ext_resource type="PackedScene" uid="uid://8tstd7d5ym4n" path="res://components/Models/Trees/GLTF format/treeHighCrooked.glb" id="10_f5r14"]
+[ext_resource type="PackedScene" uid="uid://c4gsfrcoqc0cm" path="res://components/Models/Cars/GLB format/suv.glb" id="11_6cyyt"]
+[ext_resource type="PackedScene" uid="uid://drm2ld5kgnjth" path="res://components/Models/Trees/GLTF format/fenceBroken.glb" id="12_nyguq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_knxmn"]
 render_priority = 0
@@ -50,11 +55,12 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="sedan" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_1t4in")]
-transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(-3.27835e-08, 2.6159e-16, 0.75, 2.6159e-16, 0.75, -2.6159e-16, -0.75, 2.6159e-16, -3.27835e-08, 2.08165e-12, 2.08165e-12, -0.277402)
+visible = false
 
 [node name="CenterCamera3D" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("centerObject") instance=ExtResource("3_sg6c3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53852, 0.0146324, 2.58451)
-centerObject = NodePath("../sedan")
+centerObject = NodePath("../../../suv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/CenterCamera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.53852, -0.0146324, -2.58451)
@@ -71,6 +77,16 @@ transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.4
 [node name="fence2" parent="fence2/fence2" instance=ExtResource("5_k4pm8")]
 transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 1, 0, 0, 0.934975)
 
+[node name="fence3" parent="." instance=ExtResource("5_k4pm8")]
+transform = Transform3D(-8.74228e-08, 6.97574e-16, 2, 6.97574e-16, 2, -6.97574e-16, -2, 6.97574e-16, -8.74228e-08, -1.30296, 0.0146324, 0.2026)
+visible = false
+
+[node name="fence2" parent="fence3" instance=ExtResource("5_k4pm8")]
+transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 1, 0, 0, 0.934975)
+
+[node name="fence2" parent="fence3/fence2" instance=ExtResource("5_k4pm8")]
+transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 1, 0, 0, 0.934975)
+
 [node name="tree2" parent="." instance=ExtResource("6_tn2hy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35699, 0.0146324, -2.43059)
 
@@ -84,10 +100,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65662, 0.0146324, -2.87604)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82609, 0.0146324, -2.76996)
 
 [node name="lantern2" parent="." instance=ExtResource("7_1nb3e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825041, 0.0146324, 1.84336)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11947, 0.0538024, -2.01829)
 
 [node name="lantern3" parent="." instance=ExtResource("7_1nb3e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.591936, 0.0146324, 1.82642)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.387175, 0.0146324, -2.02779)
 
 [node name="lantern4" parent="." instance=ExtResource("7_1nb3e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93273, 0.0146324, 1.48485)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49666, 0.0146324, -2.01701)
+
+[node name="treeHigh2" parent="." instance=ExtResource("8_chcwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.611794, 0.0146326, -3.75033)
+
+[node name="treeCrooked2" parent="." instance=ExtResource("9_g54ct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.784674, 0.0146326, -3.34769)
+
+[node name="treeHighCrooked2" parent="." instance=ExtResource("10_f5r14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13763, 0.0146326, -3.72584)
+
+[node name="tree6" parent="." instance=ExtResource("6_tn2hy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13197, 0.0146326, -5.00986)
+
+[node name="treeCrooked3" parent="." instance=ExtResource("9_g54ct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.739343, 0.0146326, -4.57187)
+
+[node name="suv" parent="." instance=ExtResource("11_6cyyt")]
+transform = Transform3D(-3.0598e-08, 2.44151e-16, 0.7, 2.44151e-16, 0.7, -2.44151e-16, -0.7, 2.44151e-16, -3.0598e-08, 0.547646, 0.0146324, -0.315596)
+
+[node name="fenceBroken2" parent="." instance=ExtResource("12_nyguq")]
+transform = Transform3D(-8.74228e-08, 6.97574e-16, 2, 6.97574e-16, 2, -6.97574e-16, -2, 6.97574e-16, -8.74228e-08, 4.27406, 2.08165e-12, -2.70884)
+
+[node name="fenceBroken3" parent="." instance=ExtResource("12_nyguq")]
+transform = Transform3D(-8.74228e-08, 6.97574e-16, 2, 6.97574e-16, 2, -6.97574e-16, -2, 6.97574e-16, -8.74228e-08, -3.17852, 2.08165e-12, -2.70884)
