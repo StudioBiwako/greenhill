@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://m8mqr5fyqgje"]
+[gd_scene load_steps=5 format=3 uid="uid://m8mqr5fyqgje"]
 
 [ext_resource type="Script" path="res://components/Cameras/centerCamera/CenterCamera.gd" id="1_dissn"]
+[ext_resource type="Shader" path="res://levels/carShaderArtTest/PixelizationShader.gdshader" id="2_uh3ka"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_knxmn"]
+render_priority = 0
+shader = ExtResource("2_uh3ka")
+shader_parameter/depth_threshold = 0.05
+shader_parameter/reverse_depth_threshold = 0.25
+shader_parameter/normal_threshold = 0.6
+shader_parameter/darken_amount = 0.3
+shader_parameter/lighten_amount = 1.5
+shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
+shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_c8tqm"]
+material = SubResource("ShaderMaterial_knxmn")
+flip_faces = true
+size = Vector2(2, 2)
 
 [node name="CenterCamera3D" type="Camera3D"]
 script = ExtResource("1_dissn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_c8tqm")
+skeleton = NodePath("../..")

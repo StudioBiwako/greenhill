@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dht3itt6v8jic"]
+[gd_scene load_steps=12 format=3 uid="uid://dht3itt6v8jic"]
 
 [ext_resource type="PackedScene" uid="uid://cc5tcvmhfg74c" path="res://components/Models/TestPlane/plane.tscn" id="1_7i035"]
 [ext_resource type="PackedScene" uid="uid://bhq8bb1ua5bhd" path="res://components/Models/Sedan/sedan.tscn" id="2_1t4in"]
 [ext_resource type="PackedScene" uid="uid://m8mqr5fyqgje" path="res://components/Cameras/centerCamera/CenterCamera.tscn" id="3_sg6c3"]
-[ext_resource type="Shader" path="res://levels/carShaderArtTest/pixelshadertest.gdshader" id="4_5cd0v"]
 [ext_resource type="PackedScene" uid="uid://cxacmgyxadq2k" path="res://components/Models/Trees/GLTF format/fence.glb" id="5_k4pm8"]
 [ext_resource type="PackedScene" uid="uid://bvtg2apc0jv8c" path="res://components/Models/Trees/GLTF format/tree.glb" id="6_tn2hy"]
 [ext_resource type="PackedScene" uid="uid://dskjo0p3unb6r" path="res://components/Models/Trees/GLTF format/lantern.glb" id="7_1nb3e"]
@@ -12,22 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://8tstd7d5ym4n" path="res://components/Models/Trees/GLTF format/treeHighCrooked.glb" id="10_f5r14"]
 [ext_resource type="PackedScene" uid="uid://c4gsfrcoqc0cm" path="res://components/Models/Cars/GLB format/suv.glb" id="11_6cyyt"]
 [ext_resource type="PackedScene" uid="uid://drm2ld5kgnjth" path="res://components/Models/Trees/GLTF format/fenceBroken.glb" id="12_nyguq"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_knxmn"]
-render_priority = 0
-shader = ExtResource("4_5cd0v")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="QuadMesh" id="QuadMesh_kciu5"]
-material = SubResource("ShaderMaterial_knxmn")
-flip_faces = true
-size = Vector2(2, 2)
 
 [node name="CarShaderArtTest" type="Node3D"]
 
@@ -39,11 +22,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
-stretch_shrink = 2
+stretch_shrink = 3
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(960, 540)
+size = Vector2i(640, 360)
 render_target_update_mode = 4
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
@@ -61,12 +44,6 @@ visible = false
 [node name="CenterCamera3D" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("centerObject") instance=ExtResource("3_sg6c3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53852, 0.0146324, 2.58451)
 centerObject = NodePath("../../../suv")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/CenterCamera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.53852, -0.0146324, -2.58451)
-extra_cull_margin = 16384.0
-mesh = SubResource("QuadMesh_kciu5")
-skeleton = NodePath("../..")
 
 [node name="fence2" parent="." instance=ExtResource("5_k4pm8")]
 transform = Transform3D(-8.74228e-08, 6.97574e-16, 2, 6.97574e-16, 2, -6.97574e-16, -2, 6.97574e-16, -8.74228e-08, -1.30296, 0.0146324, -2.69429)
