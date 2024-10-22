@@ -15,6 +15,7 @@ shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
 shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="QuadMesh" id="QuadMesh_c8tqm"]
+lightmap_size_hint = Vector2i(12, 12)
 material = SubResource("ShaderMaterial_knxmn")
 flip_faces = true
 size = Vector2(2, 2)

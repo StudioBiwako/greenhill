@@ -87,4 +87,7 @@ void fragment() {
 	vec3 edge_mix = mix(normal_col, depth_col, depth_edge);
 	
 	ALBEDO = mix(original, edge_mix, (depth_edge > 0.0 ? depth_edge : normal_edge));
+	//ALPHA = 0.0;
+
+
 }

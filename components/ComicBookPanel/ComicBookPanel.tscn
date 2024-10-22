@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6fv8ygr58viq"]
+[gd_scene load_steps=3 format=3 uid="uid://c6fv8ygr58viq"]
 
 [ext_resource type="Script" path="res://components/ComicBookPanel/ComicBookPanel.gd" id="1_l5kjx"]
+[ext_resource type="Texture2D" uid="uid://b1yb4yv4lfpfb" path="res://components/ComicBookPanel/alannaComicTest.png" id="2_nfhnj"]
 
 [node name="ComicBookPanel" type="Node3D"]
 script = ExtResource("1_l5kjx")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+render_priority = 1
+texture = ExtResource("2_nfhnj")

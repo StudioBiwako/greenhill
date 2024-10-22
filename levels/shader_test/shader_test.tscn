@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://qjn2cr1yidlc"]
+[gd_scene load_steps=10 format=3 uid="uid://qjn2cr1yidlc"]
 
+[ext_resource type="PackedScene" uid="uid://m8mqr5fyqgje" path="res://components/Cameras/centerCamera/CenterCamera.tscn" id="1_bylue"]
 [ext_resource type="PackedScene" uid="uid://c6fv8ygr58viq" path="res://components/ComicBookPanel/ComicBookPanel.tscn" id="1_ddhf5"]
 [ext_resource type="Texture2D" uid="uid://nb6iw2mwovor" path="res://components/ComicBookPanel/test.png" id="2_sqnfo"]
 [ext_resource type="PackedScene" uid="uid://p056dls5unbv" path="res://components/Models/Cars/GLB format/sedan.glb" id="3_ia2uu"]
@@ -19,8 +20,8 @@ light_bake_mode = 1
 shadow_enabled = true
 shadow_opacity = 0.2
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.91952, 0.393043, 0, -0.393043, 0.91952, -0.511528, 1.88124, 3.42434)
+[node name="CenterCamera3D" parent="." node_paths=PackedStringArray("centerObject") instance=ExtResource("1_bylue")]
+centerObject = NodePath("../sedan")
 
 [node name="ComicBookPanel" parent="." instance=ExtResource("1_ddhf5")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.104571, 1.55977, 2.52406)
