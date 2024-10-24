@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtlvjc25lx7c7"]
+
+[ext_resource type="Texture2D" uid="uid://b1yb4yv4lfpfb" path="res://components/ComicBookPanel/alannaComicTest.png" id="1_imqqv"]
+
+[node name="ComicBookPanelManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1614, 517)
+scale = Vector2(0.385342, 0.385342)
+texture = ExtResource("1_imqqv")

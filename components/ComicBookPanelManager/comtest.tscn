@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjpm7l03me6an"]
+
+[ext_resource type="Texture2D" uid="uid://b1yb4yv4lfpfb" path="res://components/ComicBookPanel/alannaComicTest.png" id="1_mxdhh"]
+
+[node name="Comtest" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1380.81, 297.188)
+scale = Vector2(0.267237, 0.267237)
+texture = ExtResource("1_mxdhh")
