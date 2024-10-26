@@ -5,6 +5,6 @@
 [node name="Comtest" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1380.81, 297.188)
+position = Vector2(1597, 505)
 scale = Vector2(0.267237, 0.267237)
 texture = ExtResource("1_mxdhh")
