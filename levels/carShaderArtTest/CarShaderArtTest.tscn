@@ -30,6 +30,7 @@ stretch = true
 stretch_shrink = 3
 
 [node name="Comtest" parent="SubViewportContainer" instance=ExtResource("1_p5wp3")]
+visible = false
 
 [node name="ComicBookPanelManager" parent="SubViewportContainer" instance=ExtResource("1_rbg3s")]
 visible = false
@@ -115,7 +116,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13197, 0.0146326, -5.00986)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.739343, 0.0146326, -4.57187)
 
 [node name="suv" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("11_6cyyt")]
-transform = Transform3D(-3.0598e-08, 2.44151e-16, 0.7, 2.44151e-16, 0.7, -2.44151e-16, -0.7, 2.44151e-16, -3.0598e-08, 0.547646, 0.0146324, -0.315596)
+transform = Transform3D(-2.62268e-08, 2.09272e-16, 0.6, 2.09272e-16, 0.6, -2.09272e-16, -0.6, 2.09272e-16, -2.62268e-08, 0.547646, 0.0146324, -0.315596)
 
 [node name="fenceBroken2" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("12_nyguq")]
 transform = Transform3D(-8.74228e-08, 6.97574e-16, 2, 6.97574e-16, 2, -6.97574e-16, -2, 6.97574e-16, -8.74228e-08, 4.27406, 2.08165e-12, -2.70884)

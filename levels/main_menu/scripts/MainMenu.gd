@@ -29,6 +29,7 @@ func _on_load_sound_test_pressed():
 
 func _on_load_3D_car_test():
 	print("loading car test screen")
+	get_tree().change_scene_to_file("res://levels/carShaderArtTest/CarShaderArtTest.tscn")
 	pass 
 	
 func _on_load_alanna_comicbook_test():

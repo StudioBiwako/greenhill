@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfx004e6i6ovf"]
+
+[ext_resource type="PackedScene" uid="uid://b7gyd5uoy4gum" path="res://levels/opening/game_name/game_name.tscn" id="1_6pu3o"]
+[ext_resource type="Script" path="res://levels/opening/opening_manager.gd" id="1_o4ffi"]
+[ext_resource type="PackedScene" uid="uid://cppbia2gr5ddf" path="res://levels/TransitionScene/TransitionScene.tscn" id="2_lvenx"]
+
+[node name="OpeningManager" type="Node2D"]
+script = ExtResource("1_o4ffi")
+
+[node name="CurrentScene" type="Node" parent="."]
+
+[node name="GameOpeningSplash" parent="CurrentScene" instance=ExtResource("1_6pu3o")]
+position = Vector2(960, 544)
+
+[node name="TransitionScene" parent="." instance=ExtResource("2_lvenx")]
+
+[connection signal="transitioned" from="TransitionScene" to="." method="_on_transition_scene_transitioned"]

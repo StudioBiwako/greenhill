@@ -1,10 +1,16 @@
 extends Camera3D
+"""
+This camera focuses around a single center Node3D object
+
+Set the Node3D object in the editor
+"""
+
 
 @export var centerObject: Node3D  # Reference to the object to orbit around
 @export var orbitSpeed: float = 0.001  # Speed of orbit rotation
 @export var orbitDistance: float = 3  # Distance from center object
 @export var maxVerticalAngle: float = 45.0  # Maximum vertical angle in degrees
-@export var minVerticalAngle: float = 15.0  # Minimum vertical angle in degrees
+@export var minVerticalAngle: float = 5.0  # Minimum vertical angle in degrees
 
 var orbitAngleHorizontal: float = 0.0
 var orbitAngleVertical: float = 45.0

@@ -1,18 +1,18 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7gyd5uoy4gum"]
 
-[ext_resource type="Texture2D" uid="uid://bpbo44odksvix" path="res://levels/intro_splash_screen/game_name_splash/intro_splash.png" id="1_cxejq"]
-[ext_resource type="Script" path="res://levels/intro_splash_screen/game_opening_splash.gd" id="1_je341"]
+[ext_resource type="Script" path="res://levels/opening/game_name/game_name.gd" id="1_r5ecf"]
+[ext_resource type="Texture2D" uid="uid://bpbo44odksvix" path="res://levels/opening/game_name/sprites/intro_splash.png" id="2_uivgb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oc73b"]
-atlas = ExtResource("1_cxejq")
+atlas = ExtResource("2_uivgb")
 region = Rect2(0, 0, 940, 164)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_soko8"]
-atlas = ExtResource("1_cxejq")
+atlas = ExtResource("2_uivgb")
 region = Rect2(0, 164, 940, 164)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1j613"]
-atlas = ExtResource("1_cxejq")
+atlas = ExtResource("2_uivgb")
 region = Rect2(0, 328, 940, 164)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2tbrb"]
@@ -33,7 +33,7 @@ animations = [{
 }]
 
 [node name="GameOpeningSplash" type="Node2D"]
-script = ExtResource("1_je341")
+script = ExtResource("1_r5ecf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -51,4 +51,4 @@ position = Vector2(22, 2.08165e-12)
 scale = Vector2(0.891011, 0.844512)
 sprite_frames = SubResource("SpriteFrames_2tbrb")
 animation = &"playIntroAni"
-frame_progress = 0.59166
+frame_progress = 0.246997
