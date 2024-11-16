@@ -50,7 +50,7 @@ offset_bottom = 1092.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(453, 559)
 sprite_frames = SubResource("SpriteFrames_fmuys")
-frame_progress = 0.344989
+frame_progress = 0.254457
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 texture_filter = 1
