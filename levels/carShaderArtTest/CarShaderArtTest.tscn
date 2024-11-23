@@ -1,21 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://dht3itt6v8jic"]
+[gd_scene load_steps=11 format=3 uid="uid://dht3itt6v8jic"]
 
 [ext_resource type="PackedScene" uid="uid://cc5tcvmhfg74c" path="res://components/Models/TestPlane/plane.tscn" id="1_7i035"]
 [ext_resource type="PackedScene" uid="uid://cjpm7l03me6an" path="res://components/ComicBookPanelManager/comtest.tscn" id="1_p5wp3"]
 [ext_resource type="PackedScene" uid="uid://dtlvjc25lx7c7" path="res://components/ComicBookPanelManager/ComicBookPanelManager.tscn" id="1_rbg3s"]
-[ext_resource type="PackedScene" uid="uid://bhq8bb1ua5bhd" path="res://components/Models/Sedan/sedan.tscn" id="2_1t4in"]
 [ext_resource type="PackedScene" uid="uid://c6fv8ygr58viq" path="res://components/ComicBookPanel/ComicBookPanel.tscn" id="3_pfuqw"]
 [ext_resource type="PackedScene" uid="uid://m8mqr5fyqgje" path="res://components/Cameras/centerCamera/CenterCamera.tscn" id="3_sg6c3"]
 [ext_resource type="Texture2D" uid="uid://b1yb4yv4lfpfb" path="res://components/ComicBookPanel/alannaComicTest.png" id="4_6aeq7"]
-[ext_resource type="PackedScene" uid="uid://cxacmgyxadq2k" path="res://components/Models/Trees/GLTF format/fence.glb" id="5_k4pm8"]
-[ext_resource type="PackedScene" uid="uid://bvtg2apc0jv8c" path="res://components/Models/Trees/GLTF format/tree.glb" id="6_tn2hy"]
-[ext_resource type="PackedScene" uid="uid://dskjo0p3unb6r" path="res://components/Models/Trees/GLTF format/lantern.glb" id="7_1nb3e"]
-[ext_resource type="PackedScene" uid="uid://duoh08dg2jt7k" path="res://components/Models/Trees/GLTF format/treeHigh.glb" id="8_chcwm"]
-[ext_resource type="PackedScene" uid="uid://4tw12oj1slch" path="res://components/Models/Trees/GLTF format/treeCrooked.glb" id="9_g54ct"]
-[ext_resource type="PackedScene" uid="uid://8tstd7d5ym4n" path="res://components/Models/Trees/GLTF format/treeHighCrooked.glb" id="10_f5r14"]
 [ext_resource type="PackedScene" uid="uid://c4gsfrcoqc0cm" path="res://components/Models/Cars/GLB format/suv.glb" id="11_6cyyt"]
-[ext_resource type="PackedScene" uid="uid://drm2ld5kgnjth" path="res://components/Models/Trees/GLTF format/fenceBroken.glb" id="12_nyguq"]
 [ext_resource type="Script" path="res://levels/carShaderArtTest/DevTool.gd" id="16_o645g"]
+[ext_resource type="PackedScene" uid="uid://bausul7p4frcx" path="res://components/Models/fences/fence.glb" id="19_46rnx"]
+[ext_resource type="PackedScene" uid="uid://d2j7818fnc7g2" path="res://components/Models/Roads/highway/highway.glb" id="20_ij48t"]
 
 [node name="CarShaderArtTest" type="Node3D"]
 
@@ -27,7 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
-stretch_shrink = 3
+stretch_shrink = 2
 
 [node name="Comtest" parent="SubViewportContainer" instance=ExtResource("1_p5wp3")]
 visible = false
@@ -38,7 +32,7 @@ layout_mode = 2
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(640, 360)
+size = Vector2i(960, 540)
 render_target_update_mode = 4
 
 [node name="ComicBookPanel" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_pfuqw")]
@@ -52,81 +46,40 @@ light_energy = 2.0
 shadow_enabled = true
 
 [node name="Ground" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_7i035")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164703, 0.0109992, -0.12672)
 
-[node name="sedan" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_1t4in")]
-transform = Transform3D(-3.27835e-08, 2.6159e-16, 0.75, 2.6159e-16, 0.75, -2.6159e-16, -0.75, 2.6159e-16, -3.27835e-08, 2.08165e-12, 2.08165e-12, -0.277402)
-visible = false
-
-[node name="Node" type="Node" parent="SubViewportContainer/SubViewport"]
-
-[node name="fence2" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("5_k4pm8")]
-transform = Transform3D(-8.74228e-08, 6.97574e-16, 2, 6.97574e-16, 2, -6.97574e-16, -2, 6.97574e-16, -8.74228e-08, -1.30296, 0.0146324, -2.69429)
-
-[node name="fence2" parent="SubViewportContainer/SubViewport/Node/fence2" instance=ExtResource("5_k4pm8")]
-transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 1, 0, 0, 0.934975)
-
-[node name="fence2" parent="SubViewportContainer/SubViewport/Node/fence2/fence2" instance=ExtResource("5_k4pm8")]
-transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 1, 0, 0, 0.934975)
-
-[node name="fence3" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("5_k4pm8")]
-transform = Transform3D(-8.74228e-08, 6.97574e-16, 2, 6.97574e-16, 2, -6.97574e-16, -2, 6.97574e-16, -8.74228e-08, -1.30296, 0.0146324, 0.2026)
-visible = false
-
-[node name="fence2" parent="SubViewportContainer/SubViewport/Node/fence3" instance=ExtResource("5_k4pm8")]
-transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 1, 0, 0, 0.934975)
-
-[node name="fence2" parent="SubViewportContainer/SubViewport/Node/fence3/fence2" instance=ExtResource("5_k4pm8")]
-transform = Transform3D(1, -3.48787e-16, 0, 3.48787e-16, 1, -3.48787e-16, 0, 3.48787e-16, 1, 0, 0, 0.934975)
-
-[node name="tree2" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("6_tn2hy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35699, 0.0146324, -2.43059)
-
-[node name="tree3" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("6_tn2hy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.265294, 0.0146324, -2.74395)
-
-[node name="tree4" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("6_tn2hy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65662, 0.0146324, -2.87604)
-
-[node name="tree5" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("6_tn2hy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82609, 0.0146324, -2.76996)
-
-[node name="lantern2" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("7_1nb3e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11947, 0.0538024, -2.01829)
-
-[node name="lantern3" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("7_1nb3e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.387175, 0.0146324, -2.02779)
-
-[node name="lantern4" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("7_1nb3e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49666, 0.0146324, -2.01701)
-
-[node name="treeHigh2" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("8_chcwm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.611794, 0.0146326, -3.75033)
-
-[node name="treeCrooked2" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("9_g54ct")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.784674, 0.0146326, -3.34769)
-
-[node name="treeHighCrooked2" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("10_f5r14")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13763, 0.0146326, -3.72584)
-
-[node name="tree6" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("6_tn2hy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13197, 0.0146326, -5.00986)
-
-[node name="treeCrooked3" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("9_g54ct")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.739343, 0.0146326, -4.57187)
-
-[node name="suv" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("11_6cyyt")]
-transform = Transform3D(-2.62268e-08, 2.09272e-16, 0.6, 2.09272e-16, 0.6, -2.09272e-16, -0.6, 2.09272e-16, -2.62268e-08, 0.547646, 0.0146324, -0.315596)
-
-[node name="fenceBroken2" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("12_nyguq")]
-transform = Transform3D(-8.74228e-08, 6.97574e-16, 2, 6.97574e-16, 2, -6.97574e-16, -2, 6.97574e-16, -8.74228e-08, 4.27406, 2.08165e-12, -2.70884)
-
-[node name="fenceBroken3" parent="SubViewportContainer/SubViewport/Node" instance=ExtResource("12_nyguq")]
-transform = Transform3D(-8.74228e-08, 6.97574e-16, 2, 6.97574e-16, 2, -6.97574e-16, -2, 6.97574e-16, -8.74228e-08, -3.17852, 2.08165e-12, -2.70884)
+[node name="suv" parent="SubViewportContainer/SubViewport" instance=ExtResource("11_6cyyt")]
+transform = Transform3D(-1.74846e-08, 1.39515e-16, 0.4, 1.39515e-16, 0.4, -1.39515e-16, -0.4, 1.39515e-16, -1.74846e-08, -0.342976, 0.0146324, -0.815307)
 
 [node name="CenterCamera3D" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("centerObject") instance=ExtResource("3_sg6c3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53852, 0.0146324, 2.58451)
-centerObject = NodePath("../Node/suv")
+centerObject = NodePath("../suv")
 
 [node name="DevTool" type="Node" parent="SubViewportContainer/SubViewport"]
 script = ExtResource("16_o645g")
+
+[node name="road2" parent="SubViewportContainer" instance=ExtResource("20_ij48t")]
+transform = Transform3D(-1.74846e-08, 1.39515e-16, 0.4, 1.39515e-16, 0.4, -1.39515e-16, -0.4, 1.39515e-16, -1.74846e-08, -0.97578, 0.0146324, -0.415163)
+
+[node name="road" parent="SubViewportContainer" instance=ExtResource("20_ij48t")]
+transform = Transform3D(-1.74846e-08, 1.39515e-16, 0.4, 1.39515e-16, 0.4, -1.39515e-16, -0.4, 1.39515e-16, -1.74846e-08, 0.762179, 0.0146324, -0.415163)
+
+[node name="Fence" type="Node" parent="."]
+
+[node name="planksWood" parent="Fence" instance=ExtResource("19_46rnx")]
+transform = Transform3D(1.50996e-08, 0.2, 8.74228e-09, 0, -8.74228e-09, 0.2, 0.2, -1.50996e-08, -6.60024e-16, -2.29249, 0.269924, -1.53859)
+
+[node name="planksWood2" parent="Fence" instance=ExtResource("19_46rnx")]
+transform = Transform3D(1.50996e-08, 0.2, 8.74228e-09, 0, -8.74228e-09, 0.2, 0.2, -1.50996e-08, -6.60024e-16, -1.42102, 0.269924, -1.53859)
+
+[node name="planksWood3" parent="Fence" instance=ExtResource("19_46rnx")]
+transform = Transform3D(1.50996e-08, 0.2, 8.74228e-09, 0, -8.74228e-09, 0.2, 0.2, -1.50996e-08, -6.60024e-16, -0.554497, 0.269924, -1.53859)
+
+[node name="planksWood4" parent="Fence" instance=ExtResource("19_46rnx")]
+transform = Transform3D(1.50996e-08, 0.2, 8.74228e-09, 0, -8.74228e-09, 0.2, 0.2, -1.50996e-08, -6.60024e-16, 0.316975, 0.269924, -1.53859)
+
+[node name="planksWood5" parent="Fence" instance=ExtResource("19_46rnx")]
+transform = Transform3D(1.50996e-08, 0.2, 8.74228e-09, 0, -8.74228e-09, 0.2, 0.2, -1.50996e-08, -6.60024e-16, 1.19212, 0.269924, -1.53859)
+
+[node name="planksWood6" parent="Fence" instance=ExtResource("19_46rnx")]
+transform = Transform3D(1.50996e-08, 0.2, 8.74228e-09, 0, -8.74228e-09, 0.2, 0.2, -1.50996e-08, -6.60024e-16, 2.06359, 0.269924, -1.53859)
