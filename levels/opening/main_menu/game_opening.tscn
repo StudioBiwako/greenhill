@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmyhr12l4xrkv"]
 
-[ext_resource type="Script" path="res://levels/main_menu/scripts/MainMenu.gd" id="1_am3f0"]
-[ext_resource type="FontFile" uid="uid://cghprndmqayw3" path="res://commons/fonts/font.ttf" id="2_tf514"]
+[ext_resource type="Script" path="res://levels/opening/main_menu/scripts/MainMenu.gd" id="1_g05ow"]
+[ext_resource type="FontFile" uid="uid://cghprndmqayw3" path="res://commons/fonts/font.ttf" id="2_efrek"]
 
 [sub_resource type="Theme" id="Theme_wql74"]
-default_font = ExtResource("2_tf514")
+default_font = ExtResource("2_efrek")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -14,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_am3f0")
+script = ExtResource("1_g05ow")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

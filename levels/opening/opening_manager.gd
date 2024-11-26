@@ -2,7 +2,7 @@ extends Node2D
 
 const StudioNameScene = preload("res://levels/opening/studio_name/studio_name.tscn")
 var sceneCount = 0
-const MainMenuScene = preload("res://levels/main_menu/game_opening.tscn")
+const MainMenuScene = preload("res://levels/opening/main_menu/game_opening.tscn")
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		$TransitionScene.transition()
