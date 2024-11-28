@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfx004e6i6ovf"]
+[gd_scene load_steps=5 format=3 uid="uid://dfx004e6i6ovf"]
 
 [ext_resource type="PackedScene" uid="uid://b7gyd5uoy4gum" path="res://levels/opening/game_name/game_name.tscn" id="1_6pu3o"]
 [ext_resource type="Script" path="res://levels/opening/opening_manager.gd" id="1_o4ffi"]
+[ext_resource type="AudioStream" uid="uid://ypa70mvwhrf7" path="res://commons/audio/opening/opening.mp3" id="2_6tcpj"]
 [ext_resource type="PackedScene" uid="uid://cppbia2gr5ddf" path="res://levels/TransitionScene/TransitionScene.tscn" id="2_lvenx"]
 
 [node name="OpeningManager" type="Node2D"]
 script = ExtResource("1_o4ffi")
+openingAudio = ExtResource("2_6tcpj")
 
 [node name="CurrentScene" type="Node" parent="."]
 
