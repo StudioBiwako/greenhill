@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://fghti23irkgg"]
+
+[ext_resource type="FontFile" uid="uid://cghprndmqayw3" path="res://commons/fonts/font.ttf" id="1_fitas"]
+
+[resource]
+Button/colors/font_color = Color(0.0788454, 0.220634, 0.3499, 1)
+Button/colors/font_hover_color = Color(0.0788454, 0.220634, 0.3499, 1)
+Button/colors/font_outline_color = Color(0, 0.423529, 0.34902, 0)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_fitas")

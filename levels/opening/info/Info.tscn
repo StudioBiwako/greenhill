@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://oivcixu7dy0b"]
+
+[ext_resource type="FontFile" uid="uid://cghprndmqayw3" path="res://commons/fonts/font.ttf" id="1_ivtgm"]
+
+[node name="Info" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1943.0
+offset_bottom = 1092.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = 664.0
+offset_top = 390.0
+offset_right = 1203.0
+offset_bottom = 704.0
+theme_override_colors/default_color = Color(0.0784314, 0.219608, 0.34902, 1)
+theme_override_fonts/normal_font = ExtResource("1_ivtgm")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]This game is a work of fiction. Any names, characters, places and incidents either are products of the developer's imagination or are used fictitiously. Any resemblance to actual events or locales or persons, living or dead, is entirely coincidental.
+
+"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = 32.0
+offset_top = 1024.0
+offset_right = 571.0
+offset_bottom = 1120.0
+theme_override_colors/default_color = Color(0.0784314, 0.219608, 0.34902, 1)
+theme_override_fonts/normal_font = ExtResource("1_ivtgm")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "BETA BUILD V.0.0.1
+
+"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = 30.0
+offset_top = 18.0
+offset_right = 569.0
+offset_bottom = 332.0
+theme_override_colors/default_color = Color(0.0784314, 0.219608, 0.34902, 1)
+theme_override_fonts/normal_font = ExtResource("1_ivtgm")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "PROJECT MICHIGAN
+
+"
