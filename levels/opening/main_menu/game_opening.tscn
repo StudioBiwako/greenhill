@@ -57,3 +57,4 @@ script = ExtResource("3_7yope")
 
 [connection signal="pressed" from="VBoxContainer/Load_3D_car_Test" to="." method="_on_load_3D_car_test"]
 [connection signal="pressed" from="VBoxContainer/Load_Intro" to="." method="_on_load_intro_pressed"]
+[connection signal="pressed" from="VBoxContainer/Load_Credits" to="." method="_on_load_credits_pressed"]

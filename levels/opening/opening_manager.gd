@@ -10,7 +10,8 @@ var timer: Timer
 
 func _ready():
 	# Create and configure the timer
-	SoundManager.play_sound(openingAudio)
+	SoundManager.play_music(openingAudio, 1)
+
 	timer = Timer.new()
 	add_child(timer)
 	timer.wait_time = 3.4  # 3 seconds

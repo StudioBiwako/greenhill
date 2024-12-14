@@ -18,8 +18,15 @@ func _on_load_intro_pressed():
 
 func _on_load_3D_car_test():
 	print("loading car test screen")
+	#var bgSound = SoundManager.get_currently_playing_music()
+	#if bgSound:
+		#bgSound = bgSound[0]
+		#bgSound.stop_music(3)
+	SoundManager.stop_music(3)
 	get_tree().change_scene_to_file("res://levels/carShaderArtTest/CarShaderArtTest.tscn")
 	pass 
-	
 
-
+func _on_load_credits_pressed():
+	SoundManager.stop_music(3)
+	print("loading car test screen")
+	pass # Replace with function body.
