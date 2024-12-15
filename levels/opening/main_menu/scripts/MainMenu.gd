@@ -13,7 +13,7 @@ func _process(delta):
 
 func _on_load_intro_pressed():
 	print("loading into screen")
-	get_tree().change_scene_to_file("res://levels/intro_splash_screen/game_opening_splash.tscn")
+	get_tree().change_scene_to_file("res://levels/Intro/IntroManager.tscn")
 	return # Replace with function body.
 
 func _on_load_3D_car_test():

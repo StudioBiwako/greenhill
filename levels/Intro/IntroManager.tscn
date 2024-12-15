@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmeg2rn6qn6b4"]
+
+[ext_resource type="Script" path="res://levels/Intro/IntroManager.gd" id="1_11l1a"]
+[ext_resource type="PackedScene" uid="uid://cppbia2gr5ddf" path="res://levels/TransitionScene/TransitionScene.tscn" id="2_6wwqb"]
+[ext_resource type="PackedScene" uid="uid://buuk0nk3hof2c" path="res://levels/Intro/MauriceChoiceDialogue/MauriceChoiceDialogue.tscn" id="2_h2n1i"]
+
+[node name="IntroManager" type="Node2D"]
+script = ExtResource("1_11l1a")
+
+[node name="CurrentScene" type="Node" parent="."]
+
+[node name="MauriceChoiceDialogue" parent="CurrentScene" instance=ExtResource("2_h2n1i")]
+
+[node name="TransitionScene" parent="." instance=ExtResource("2_6wwqb")]
+
+[connection signal="transitioned" from="TransitionScene" to="." method="_on_transition_scene_transitioned"]

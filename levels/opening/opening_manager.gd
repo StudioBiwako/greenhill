@@ -16,6 +16,7 @@ func _ready():
 	add_child(timer)
 	timer.wait_time = 3.4  # 3 seconds
 	timer.one_shot = false  # Will repeat
+	#timer will fire off every 3.4 seconds
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
 
