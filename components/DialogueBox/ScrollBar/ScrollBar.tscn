@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://d3t43tp4a4ev8"]
+
+[node name="ScrollBar" type="Node2D"]
