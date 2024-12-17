@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://cnbc8lvg67t47"]
+[gd_scene load_steps=2 format=3 uid="uid://cnbc8lvg67t47"]
+
+[ext_resource type="Script" path="res://components/DialogueBox/ChoiceBlock/ChoiceBlock.gd" id="1_713e7"]
 
 [node name="ChoiceBlock" type="Node2D"]
+script = ExtResource("1_713e7")

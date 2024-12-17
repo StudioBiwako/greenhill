@@ -1,4 +1,5 @@
 extends Control
+var SavedGamesPanel = preload("res://levels/opening/main_menu/SavePanel/SavePanel.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,4 +30,17 @@ func _on_load_3D_car_test():
 func _on_load_credits_pressed():
 	SoundManager.stop_music(3)
 	print("loading car test screen")
+	pass # Replace with function body.
+
+
+func _on_load_3d_test_pressed():
+	pass # Replace with function body.
+
+
+#Start Button Pressed
+func _on_start_game_pressed():
+	SoundManager.stop_music(3)
+	var SavedGamesPanelInstance = SavedGamesPanel.instantiate()
+	add_child(SavedGamesPanelInstance)
+	#get_tree().change_scene_to_file("res://levels/Intro/IntroManager.tscn")
 	pass # Replace with function body.

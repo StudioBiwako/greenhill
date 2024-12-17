@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://cb1xie8370rgd"]
+[gd_scene load_steps=2 format=3 uid="uid://cb1xie8370rgd"]
+
+[ext_resource type="Script" path="res://components/DialogueBox/TextBlock/TextBlock.gd" id="1_idmf0"]
 
 [node name="TextBlock" type="Node2D"]
+script = ExtResource("1_idmf0")

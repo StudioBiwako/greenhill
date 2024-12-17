@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch471shv1ey8w"]
+
+[ext_resource type="Script" path="res://levels/opening/main_menu/SavePanel/SavePanel.gd" id="1_w43bf"]
+[ext_resource type="Theme" uid="uid://fghti23irkgg" path="res://levels/opening/main_menu/button.tres" id="2_gsnk2"]
+[ext_resource type="Script" path="res://levels/opening/main_menu/button.gd" id="3_fu1mr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1pss"]
+bg_color = Color(1, 1, 1, 1)
+border_blend = true
+shadow_size = 10
+
+[node name="SavePanel" type="Node2D"]
+script = ExtResource("1_w43bf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 94.0
+offset_top = 53.0
+offset_right = 94.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+theme_override_styles/panel = SubResource("StyleBoxFlat_a1pss")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 837.0
+offset_top = 516.0
+offset_right = 1066.0
+offset_bottom = 563.0
+theme = ExtResource("2_gsnk2")
+text = "start new game
+"
+script = ExtResource("3_fu1mr")
+
+[connection signal="button_up" from="CanvasLayer/Button" to="." method="_on_button_button_up"]
