@@ -16,5 +16,6 @@ func _process(delta):
 
 
 func _on_button_button_up():
+	SoundManager.stop_music(3)
 	get_tree().change_scene_to_file("res://levels/Intro/IntroManager.tscn")
 	pass # Replace with function body.

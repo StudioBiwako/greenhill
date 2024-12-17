@@ -39,7 +39,6 @@ func _on_load_3d_test_pressed():
 
 #Start Button Pressed
 func _on_start_game_pressed():
-	SoundManager.stop_music(3)
 	var SavedGamesPanelInstance = SavedGamesPanel.instantiate()
 	add_child(SavedGamesPanelInstance)
 	#get_tree().change_scene_to_file("res://levels/Intro/IntroManager.tscn")
