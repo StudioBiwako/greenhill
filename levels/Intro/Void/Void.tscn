@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5jn5fl40ak1k"]
 
-[ext_resource type="PackedScene" uid="uid://v8mwitd4ts2w" path="res://levels/Intro/Void/UIContainer.tscn" id="2_1uhrr"]
+[ext_resource type="PackedScene" uid="uid://v8mwitd4ts2w" path="res://components/UIContainer/UIContainer.tscn" id="2_1uhrr"]
 [ext_resource type="PackedScene" uid="uid://cc5tcvmhfg74c" path="res://components/Models/TestPlane/plane.tscn" id="5_odqk1"]
 [ext_resource type="PackedScene" uid="uid://m8mqr5fyqgje" path="res://components/Cameras/centerCamera/CenterCamera.tscn" id="7_mnc4x"]
 [ext_resource type="PackedScene" uid="uid://bausul7p4frcx" path="res://components/Models/fences/fence.glb" id="10_in4bn"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://v8mwitd4ts2w"]
 
-[ext_resource type="Script" path="res://levels/Intro/Void/UIContainer.gd" id="1_r67bm"]
+[ext_resource type="Script" path="res://components/UIContainer/UIContainer.gd" id="1_r67bm"]
 
 [node name="UIContainer" type="Node3D"]
 
