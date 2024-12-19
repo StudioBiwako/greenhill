@@ -32,18 +32,21 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="yesButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="yes" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "[Accept]"
 
-[node name="noButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="no" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "[Deny]"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 15
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
+offset_top = -115.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -63,3 +66,6 @@ text = "[center]“Please, this time… let me forget.”
 "
 fit_content = true
 scroll_active = false
+
+[connection signal="button_up" from="CanvasLayer/VBoxContainer/yes" to="." method="_on_yes_button_up"]
+[connection signal="button_up" from="CanvasLayer/VBoxContainer/no" to="." method="_on_no_button_up"]
