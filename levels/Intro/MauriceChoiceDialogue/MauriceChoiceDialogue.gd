@@ -18,9 +18,9 @@ func _process(delta):
 #on yes button
 func _on_yes_button_up():
 	get_tree().change_scene_to_file("res://levels/Intro/Void/Void.tscn")
-	pass # Replace with function body.
+	return # Replace with function body.
 
 #on no button
 func _on_no_button_up():
 	get_tree().change_scene_to_file("res://levels/Intro/Void/Void.tscn")
-	pass # Replace with function body.
+	return # Replace with function body.

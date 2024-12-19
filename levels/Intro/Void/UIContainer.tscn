@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://v8mwitd4ts2w"]
+
+[ext_resource type="Script" path="res://levels/Intro/Void/UIContainer.gd" id="1_r67bm"]
+
+[node name="UIContainer" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
+script = ExtResource("1_r67bm")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="PLACE_CONTENT_IN_HERE" type="Node" parent="SubViewportContainer/SubViewport"]
