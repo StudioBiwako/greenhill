@@ -1,3 +1,51 @@
-[gd_scene format=3 uid="uid://883glfnuopde"]
+[gd_scene load_steps=8 format=3 uid="uid://c5jn5fl40ak1k"]
 
-[node name="Void" type="Node3D"]
+[ext_resource type="Script" path="res://levels/Intro/Void/UIContainer.gd" id="1_7lea6"]
+[ext_resource type="PackedScene" uid="uid://cjpm7l03me6an" path="res://components/ComicBookPanelManager/comtest.tscn" id="1_upvpd"]
+[ext_resource type="PackedScene" uid="uid://dtlvjc25lx7c7" path="res://components/ComicBookPanelManager/ComicBookPanelManager.tscn" id="2_q7kos"]
+[ext_resource type="PackedScene" uid="uid://cc5tcvmhfg74c" path="res://components/Models/TestPlane/plane.tscn" id="5_odqk1"]
+[ext_resource type="PackedScene" uid="uid://m8mqr5fyqgje" path="res://components/Cameras/centerCamera/CenterCamera.tscn" id="7_mnc4x"]
+[ext_resource type="Script" path="res://levels/carShaderArtTest/DevTool.gd" id="8_q6mr2"]
+[ext_resource type="PackedScene" uid="uid://csbsnx13lm1l0" path="res://components/Models/Cars/Sedan/Sedan.tscn" id="11_lmmqn"]
+
+[node name="CarShaderArtTest" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
+script = ExtResource("1_7lea6")
+
+[node name="Comtest" parent="SubViewportContainer" instance=ExtResource("1_upvpd")]
+
+[node name="ComicBookPanelManager" parent="SubViewportContainer" instance=ExtResource("2_q7kos")]
+visible = false
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.643723, 0.765259, 0, -0.765259, 0.643723, 0, 17.4458, 19.0313)
+light_energy = 2.0
+shadow_enabled = true
+
+[node name="Ground" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_odqk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163624, 0.0109992, -0.12672)
+
+[node name="CenterCamera3D" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("centerObject") instance=ExtResource("7_mnc4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53852, 0.0146324, 2.58451)
+centerObject = NodePath("../../../Sedan")
+
+[node name="DevTool" type="Node" parent="SubViewportContainer/SubViewport"]
+script = ExtResource("8_q6mr2")
+
+[node name="Sedan" parent="." instance=ExtResource("11_lmmqn")]
+transform = Transform3D(1, 0, -1.5246e-23, -1.5246e-23, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.129579, 0.0256317, 0.0841965)
