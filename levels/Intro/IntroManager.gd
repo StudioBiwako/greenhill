@@ -6,6 +6,8 @@ const MauriceChoiceDialogueScene = preload("res://levels/Intro/MauriceChoiceDial
 var timer: Timer
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print_tree_pretty()
+
 	if openingAudio:
 		SoundManager.play_ambient_sound(openingAudio,2.14)
 		#$TransitionScene.transition()
@@ -28,6 +30,7 @@ func _on_timer_timeout():
 	$CurrentScene.add_child(MauriceChoiceDialogueScene.instantiate())
 	$TransitionScene.transition()
 	timer.queue_free() #free timer from code
+	get_tree().get_root().print_tree()
 	return
 	
 
