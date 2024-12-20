@@ -1,4 +1,6 @@
 extends CanvasLayer
+@export var blackToWhiteToBlack: bool
+#TODO actually have this do something
 
 # transition signal
 signal transitioned
@@ -16,8 +18,8 @@ func transition():
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "fade_in":
 		print("emit signal trans")
-		emit_signal("transitioned")
 		$AnimationPlayer.play("fade_out")
+		emit_signal("transitioned")
 	if anim_name == "fade_out":
 		print("fade finished")
 	 # Replace with function body.
