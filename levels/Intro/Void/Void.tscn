@@ -33,7 +33,7 @@ light_energy = 2.0
 shadow_enabled = true
 
 [node name="Ground" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="3" instance=ExtResource("5_odqk1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163624, 0.0109992, -0.12672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163624, 0.0109992, -1.86674)
 
 [node name="CenterCamera3D" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="4" node_paths=PackedStringArray("centerObject") instance=ExtResource("7_mnc4x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53852, 0.0146324, 2.58451)
@@ -44,6 +44,7 @@ environment = SubResource("Environment_xvtem")
 
 [node name="FogVolume" type="FogVolume" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="6"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 9, -0.0821598, 0.852535, -0.213425)
+visible = false
 shape = 0
 material = SubResource("FogMaterial_rq8do")
 
