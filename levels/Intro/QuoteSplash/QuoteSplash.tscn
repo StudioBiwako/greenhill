@@ -7,16 +7,16 @@
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1943.0
 offset_bottom = 1092.0
-color = Color(0.0904823, 0.0904823, 0.0904823, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="Node" type="Node" parent="."]
 
 [node name="WeAreSuchStuff" type="RichTextLabel" parent="Node"]
 texture_filter = 1
 offset_left = 550.0
-offset_top = 422.0
+offset_top = 439.0
 offset_right = 1283.0
-offset_bottom = 500.0
+offset_bottom = 517.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_mrkwo")
 theme_override_font_sizes/normal_font_size = 32
@@ -46,9 +46,9 @@ scroll_active = false
 [node name="TheTempist" type="RichTextLabel" parent="Node"]
 texture_filter = 1
 offset_left = 992.0
-offset_top = 554.0
+offset_top = 538.0
 offset_right = 1338.0
-offset_bottom = 632.0
+offset_bottom = 616.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_mrkwo")
 theme_override_font_sizes/normal_font_size = 25
