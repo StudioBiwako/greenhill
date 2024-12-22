@@ -1,16 +1,34 @@
 extends Node2D
 
+# determine if accepted maurice's forgetting
 var forgettingAccepted: bool
+# determine if input is disabled
 var inputEnabled: bool = true
-# Called when the node enters the scene tree for the first time.
+# fade out timer
+var fadeTimer: Timer
+# dialogue number we're on
+var dialogueNumber: int = 0
+
+
 func _ready():
+	fadeTimer = Timer.new()
+	self.add_child(fadeTimer)
+	fadeTimer.one_shot = true
+	fadeTimer.timeout.connect(_on_fade_timer_timeout)
+
 	$CanvasLayer/ChoiceContainer.visible = false
 	clearAndAddMauriceText("Please...")
-	pass 
+	return
+
+func _on_fade_timer_timeout():
+	next()
 
 func clearAndAddMauriceText(text: String):
+	var centerText = "[center]" + text + "[/center]"
 	$CanvasLayer/VBoxContainer2/VBoxContainer/MauriceDialogue.clear()
-	$CanvasLayer/VBoxContainer2/VBoxContainer/MauriceDialogue.text = "[center]" + text + "[/center]"
+	$CanvasLayer/VBoxContainer2/VBoxContainer/MauriceDialogue.fadeTextIn(1.5)
+	$CanvasLayer/VBoxContainer2/VBoxContainer/MauriceDialogue.typewriterEffect(centerText)
+
 	
 func next():
 		dialogueNumber = dialogueNumber + 1
@@ -19,12 +37,15 @@ func next():
 				#should reprint her pleading
 				clearAndAddMauriceText("Please... Please....")
 			2:
-				clearAndAddMauriceText("It’s all I can see anymore...")
+				clearAndAddMauriceText("It's all I can see anymore...")
 			3:
-				clearAndAddMauriceText("All of you… all of you-")
+				clearAndAddMauriceText("All of you...all of you...")
 			4: 
-				clearAndAddMauriceText("Please, this time… let me forget...")
-				$CanvasLayer/ChoiceContainer.visible = true
+				clearAndAddMauriceText("Please, this time...let me forget...")
+				var ChoiceContainer = $CanvasLayer/ChoiceContainer
+				#fade in choice container
+				ChoiceContainer.visible = true
+				create_tween().tween_property(ChoiceContainer, "modulate:a", 1, 3)
 				inputEnabled = false
 			5: 
 				$CanvasLayer/ChoiceContainer.visible = false
@@ -34,12 +55,12 @@ func next():
 					clearAndAddMauriceText("I'm sorry...")
 			6:
 				get_tree().change_scene_to_file("res://levels/Intro/Void/Void.tscn")
+				#should prob have something to send the choice to a save file
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-var dialogueNumber: int = 0
+
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept") and inputEnabled:
-		next()
+		fadeMauriceDialgue()
 		print("UI ACCPET")
 		print(dialogueNumber)
 
@@ -52,14 +73,21 @@ func _process(delta):
 func _on_yes_button_up():
 	forgettingAccepted = true
 	inputEnabled = true
-	next()
-	return # Replace with function body.
+	fadeMauriceDialgue()
+	var ChoiceContainer = $CanvasLayer/ChoiceContainer
+	create_tween().tween_property(ChoiceContainer, "modulate:a", 0, 1.5)
+	return 
 
 #on no button
 func _on_no_button_up():
 	forgettingAccepted = false
 	inputEnabled = true
-	next()
-	return # Replace with function body.
+	fadeMauriceDialgue()
+	var ChoiceContainer = $CanvasLayer/ChoiceContainer
+	create_tween().tween_property(ChoiceContainer, "modulate:a", 0, 1.5)
+	return 
 
-
+func fadeMauriceDialgue():
+	$CanvasLayer/VBoxContainer2/VBoxContainer/MauriceDialogue.fadeTextOut(1.5)
+	fadeTimer.wait_time=1.5
+	fadeTimer.start()
