@@ -13,5 +13,9 @@ files are broken into
 - components
 	- game assests (think ts components)
 	
-	
+## Notes
+
+When refering to an object's own content, please use ```self.```
+Godot allows you to refer to an object's own content by just calling it like ```color``` instead of ```self.color```
+
 
