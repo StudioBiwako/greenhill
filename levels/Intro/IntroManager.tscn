@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://levels/Intro/IntroManager.gd" id="1_11l1a"]
 [ext_resource type="PackedScene" uid="uid://cppbia2gr5ddf" path="res://levels/TransitionScene/TransitionScene.tscn" id="2_6wwqb"]
 [ext_resource type="AudioStream" uid="uid://rgcsnxfb34o1" path="res://commons/audio/background/low_rumble/low_rumble.wav" id="2_qm4v8"]
-[ext_resource type="PackedScene" uid="uid://b55vmi3by4kki" path="res://levels/Intro/QuoteSplash/QuoteSplash.tscn" id="3_ft6qi"]
+[ext_resource type="PackedScene" uid="uid://buuk0nk3hof2c" path="res://levels/Intro/MauriceChoiceDialogue/MauriceChoiceDialogue.tscn" id="3_kppj5"]
 
 [node name="IntroManager" type="Node2D"]
 script = ExtResource("1_11l1a")
@@ -11,7 +11,7 @@ openingAudio = ExtResource("2_qm4v8")
 
 [node name="CurrentScene" type="Node" parent="."]
 
-[node name="QuoteSplash" parent="CurrentScene" instance=ExtResource("3_ft6qi")]
+[node name="MauriceChoiceDialogue" parent="CurrentScene" instance=ExtResource("3_kppj5")]
 
 [node name="TransitionScene" parent="." instance=ExtResource("2_6wwqb")]
 

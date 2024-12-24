@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://buuk0nk3hof2c"]
+[gd_scene load_steps=6 format=3 uid="uid://buuk0nk3hof2c"]
 
 [ext_resource type="FontFile" uid="uid://cghprndmqayw3" path="res://commons/fonts/font.ttf" id="1_bkrks"]
 [ext_resource type="Script" path="res://levels/Intro/MauriceChoiceDialogue/MauriceChoiceDialogue.gd" id="1_ij2x4"]
 [ext_resource type="Script" path="res://levels/Intro/MauriceChoiceDialogue/MauriceDialogue.gd" id="3_obqd1"]
+[ext_resource type="PackedScene" uid="uid://cgjvvpoj400pj" path="res://components/fadeInNode2d/fadeInNode2d.tscn" id="4_c4jll"]
+[ext_resource type="PackedScene" uid="uid://b55vmi3by4kki" path="res://levels/Intro/MauriceChoiceDialogue/QuoteSplash/QuoteSplash.tscn" id="5_swaqt"]
 
 [node name="MauriceChoiceDialogue" type="Node2D"]
 script = ExtResource("1_ij2x4")
@@ -47,6 +49,7 @@ text = "[Deny]"
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = 373.0
+offset_right = 1.0
 offset_bottom = 451.0
 grow_horizontal = 2
 
@@ -68,5 +71,13 @@ fit_content = true
 scroll_active = false
 script = ExtResource("3_obqd1")
 
+[node name="FadeInNode2d" parent="CanvasLayer" instance=ExtResource("4_c4jll")]
+fade_step = 0.01
+
+[node name="IntroQuote" parent="CanvasLayer/FadeInNode2d" instance=ExtResource("5_swaqt")]
+
 [connection signal="button_up" from="CanvasLayer/ChoiceContainer/yes" to="." method="_on_yes_button_up"]
 [connection signal="button_up" from="CanvasLayer/ChoiceContainer/no" to="." method="_on_no_button_up"]
+[connection signal="fade_completed" from="CanvasLayer/FadeInNode2d" to="." method="_on_fade_in_node_2d_fade_completed"]
+
+[editable path="CanvasLayer/FadeInNode2d/IntroQuote"]

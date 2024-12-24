@@ -12,13 +12,13 @@ func _ready():
 		SoundManager.play_ambient_sound(openingAudio,2.14)
 		#$TransitionScene.transition()
 		#TODO fix this up to use transitions...idc about allat rn
-		timer = Timer.new()
-		add_child(timer)
-		timer.wait_time = 5.0  # 5 seconds
-		timer.one_shot = true  # Will NOT repeat
-		#timer will fire off every 3.4 seconds
-		timer.timeout.connect(_on_timer_timeout)
-		timer.start()
+		# timer = Timer.new()
+		# add_child(timer)
+		# timer.wait_time = 0  # 5 seconds
+		# timer.one_shot = true  # Will NOT repeat
+		# #timer will fire off every 3.4 seconds
+		# timer.timeout.connect(_on_timer_timeout)
+		# timer.start()
 	else:
 		print("no opening audio!!!!!")
 	# conduct transition
@@ -26,11 +26,11 @@ func _ready():
 	return
 
 func _on_timer_timeout():
-	$CurrentScene.get_child(0).queue_free()
-	$CurrentScene.add_child(MauriceChoiceDialogueScene.instantiate())
-	$TransitionScene.transition()
-	timer.queue_free() #free timer from code
-	get_tree().get_root().print_tree()
+	# $CurrentScene.get_child(0).queue_free()
+	# $CurrentScene.add_child(MauriceChoiceDialogueScene.instantiate())
+	# $TransitionScene.transition()
+	# timer.queue_free() #free timer from code
+	# get_tree().get_root().print_tree()
 	return
 	
 

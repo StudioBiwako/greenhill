@@ -6,22 +6,40 @@ var forgettingAccepted: bool
 var inputEnabled: bool = true
 # fade out timer
 var fadeTimer: Timer
+# intro quote timer
+var introQuoteTimer: Timer
 # dialogue number we're on
 var dialogueNumber: int = 0
 
 
 func _ready():
+	#intro quote fade in timer
+	$CanvasLayer/FadeInNode2d.fade_in()
+	introQuoteTimer = Timer.new()
+	self.add_child(introQuoteTimer)
+	introQuoteTimer.one_shot = true
+	introQuoteTimer.timeout.connect(initialQuote)
+	introQuoteTimer.wait_time=5
+	introQuoteTimer.start()
+
+	#fade for text
 	fadeTimer = Timer.new()
 	self.add_child(fadeTimer)
 	fadeTimer.one_shot = true
 	fadeTimer.timeout.connect(_on_fade_timer_timeout)
-
 	$CanvasLayer/ChoiceContainer.visible = false
-	clearAndAddMauriceText("Please...")
+
+
 	return
+
+func initialQuote():
+	$CanvasLayer/FadeInNode2d.fade_out()
+	return
+
 
 func _on_fade_timer_timeout():
 	next()
+	return
 
 func clearAndAddMauriceText(text: String):
 	var centerText = "[center]" + text + "[/center]"
@@ -31,8 +49,11 @@ func clearAndAddMauriceText(text: String):
 
 	
 func next():
-		dialogueNumber = dialogueNumber + 1
 		match dialogueNumber:
+			0:
+				clearAndAddMauriceText("Please...")
+				$CanvasLayer/FadeInNode2d.queue_free()
+				self.print_tree_pretty()
 			1:
 				#should reprint her pleading
 				clearAndAddMauriceText("Please... Please....")
@@ -42,12 +63,14 @@ func next():
 				clearAndAddMauriceText("All of you...all of you...")
 			4: 
 				clearAndAddMauriceText("Please, this time...let me forget...")
-				var ChoiceContainer = $CanvasLayer/ChoiceContainer
+				var ChoiceContainer = $CanvasLayer/ChoiceContainer				
 				#fade in choice container
 				ChoiceContainer.visible = true
+				ChoiceContainer.modulate.a = 0
 				create_tween().tween_property(ChoiceContainer, "modulate:a", 1, 3)
 				inputEnabled = false
-			5: 
+				self.print_tree_pretty()
+			5:
 				$CanvasLayer/ChoiceContainer.visible = false
 				if forgettingAccepted: 
 					clearAndAddMauriceText("Thank you...")
@@ -56,6 +79,7 @@ func next():
 			6:
 				get_tree().change_scene_to_file("res://levels/Intro/Void/Void.tscn")
 				#should prob have something to send the choice to a save file
+		dialogueNumber = dialogueNumber + 1
 
 
 func _process(delta):
@@ -80,6 +104,7 @@ func _on_yes_button_up():
 
 #on no button
 func _on_no_button_up():
+	print("test")
 	forgettingAccepted = false
 	inputEnabled = true
 	fadeMauriceDialgue()
@@ -91,3 +116,13 @@ func fadeMauriceDialgue():
 	$CanvasLayer/VBoxContainer2/VBoxContainer/MauriceDialogue.fadeTextOut(1.5)
 	fadeTimer.wait_time=1.5
 	fadeTimer.start()
+
+'''intro quote fade in something occured'''
+func _on_fade_in_node_2d_fade_completed(fade_type:String):
+	if(fade_type == 'out'):
+		next()
+	pass # Replace with function body.
+
+func _input(event):
+	if event is InputEventMouseButton:
+		print("Mouse click at: ", event.position)
