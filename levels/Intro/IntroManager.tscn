@@ -15,4 +15,5 @@ openingAudio = ExtResource("2_qm4v8")
 
 [node name="TransitionScene" parent="." instance=ExtResource("2_6wwqb")]
 
+[connection signal="endSequenceInitiated" from="CurrentScene/MauriceChoiceDialogue" to="." method="_on_maurice_choice_dialogue_end_sequence_initiated"]
 [connection signal="transitioned" from="TransitionScene" to="." method="_on_transition_scene_transitioned"]

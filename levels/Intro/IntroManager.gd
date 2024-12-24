@@ -1,6 +1,6 @@
 extends Node2D
 @export var openingAudio: AudioStream
-const MauriceChoiceDialogueScene = preload("res://levels/Intro/MauriceChoiceDialogue/MauriceChoiceDialogue.tscn")
+const VoidScene = preload("res://levels/Intro/Void/Void.tscn")
 #TODO allow to move onto next scene after user accepts 
 #     Maurice's request
 var timer: Timer
@@ -40,4 +40,11 @@ func _process(delta):
 
 
 func _on_transition_scene_transitioned():
+	$CurrentScene.get_child(0).queue_free()
+	$CurrentScene.add_child(VoidScene.instantiate())
+	pass # Replace with function body.
+
+
+func _on_maurice_choice_dialogue_end_sequence_initiated():
+	$TransitionScene.transition()
 	pass # Replace with function body.

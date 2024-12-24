@@ -1,5 +1,5 @@
 extends Node2D
-
+signal endSequenceInitiated
 # determine if accepted maurice's forgetting
 var forgettingAccepted: bool
 # determine if input is disabled
@@ -77,7 +77,7 @@ func next():
 				else:
 					clearAndAddMauriceText("I'm sorry...")
 			6:
-				get_tree().change_scene_to_file("res://levels/Intro/Void/Void.tscn")
+				emit_signal("endSequenceInitiated")
 				#should prob have something to send the choice to a save file
 		dialogueNumber = dialogueNumber + 1
 
