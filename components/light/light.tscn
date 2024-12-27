@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqsvgwy451bmn"]
+
+[ext_resource type="Script" path="res://components/light/MeshInstance3D.gd" id="1_cgp5e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_khrrf"]
+
+[node name="Light" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+mesh = SubResource("BoxMesh_khrrf")
+script = ExtResource("1_cgp5e")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, -100, 0, 0, 0)
+light_energy = 2.06
+omni_range = 0.025

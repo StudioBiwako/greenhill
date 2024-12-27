@@ -1,4 +1,3 @@
-extends Camera3D
 """
 This camera focuses around a single center Node3D object
 
@@ -6,11 +5,15 @@ Set the Node3D object in the editor
 """
 
 
-@export var centerObject: Node3D  # Reference to the object to orbit around
-@export var orbitSpeed: float = 0.001  # Speed of orbit rotation
-@export var orbitDistance: float = 2  # Distance from center object
-@export var maxVerticalAngle: float = 45.0  # Maximum vertical angle in degrees
-@export var minVerticalAngle: float = 5.0  # Minimum vertical angle in degrees
+extends Camera3D
+
+@export var centerObject: Node3D
+@export var orbitSpeed: float = 0.001
+@export var orbitDistance: float = 3
+@export var maxVerticalAngle: float = 45.0
+@export var minVerticalAngle: float = 5.0
+@export var autoRotate: bool = false  # New exported boolean
+@export var autoRotateSpeed: float = 0.2  # New exported speed control
 
 var orbitAngleHorizontal: float = 0.0
 var orbitAngleVertical: float = 45.0
@@ -20,15 +23,16 @@ func _ready():
 		updateCameraPosition()
 
 func _process(delta):
-	pass
+	if autoRotate:
+		orbitAngleHorizontal += autoRotateSpeed * delta  # Add rotation each frame
+		updateCameraPosition()
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT): 
 			orbitAngleHorizontal += event.relative.x * orbitSpeed
-			orbitAngleVertical -= event.relative.y * orbitSpeed  # Inverted for intuitive control
+			orbitAngleVertical -= event.relative.y * orbitSpeed
 			
-			# Clamp vertical angle
 			var maxAngleRad = deg_to_rad(maxVerticalAngle)
 			var minAngleRad = deg_to_rad(minVerticalAngle)
 			orbitAngleVertical = clampf(orbitAngleVertical, minAngleRad, maxAngleRad)

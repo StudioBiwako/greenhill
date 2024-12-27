@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5jn5fl40ak1k"]
+[gd_scene load_steps=9 format=3 uid="uid://c5jn5fl40ak1k"]
 
 [ext_resource type="PackedScene" uid="uid://v8mwitd4ts2w" path="res://components/UIContainer/UIContainer.tscn" id="2_1uhrr"]
+[ext_resource type="PackedScene" uid="uid://d4aciq6f8hymp" path="res://components/Models/Trees/tree2.glb" id="2_hklco"]
 [ext_resource type="PackedScene" uid="uid://cc5tcvmhfg74c" path="res://components/Models/TestPlane/plane.tscn" id="5_odqk1"]
 [ext_resource type="PackedScene" uid="uid://m8mqr5fyqgje" path="res://components/Cameras/centerCamera/CenterCamera.tscn" id="7_mnc4x"]
 [ext_resource type="PackedScene" uid="uid://bausul7p4frcx" path="res://components/Models/fences/fence.glb" id="10_in4bn"]
@@ -8,43 +9,46 @@
 
 [sub_resource type="Environment" id="Environment_xvtem"]
 volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0, 0, 0, 1)
 volumetric_fog_emission_energy = 1024.0
 volumetric_fog_gi_inject = 0.0
 volumetric_fog_anisotropy = 0.9
 
 [sub_resource type="FogMaterial" id="FogMaterial_rq8do"]
-emission = Color(1, 1, 1, 1)
+albedo = Color(0, 0, 0, 1)
 
 [node name="Void" type="Node3D"]
 transform = Transform3D(0.25, -1.74393e-16, 1.03981e-24, 1.03981e-24, 2.98122e-09, 0.25, -1.74393e-16, -0.25, 2.98122e-09, 0.17899, 0, 0.148422)
 
 [node name="UIContainer" parent="." instance=ExtResource("2_1uhrr")]
 
-[node name="fence" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="0" instance=ExtResource("10_in4bn")]
+[node name="tree2" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="0" instance=ExtResource("2_hklco")]
+transform = Transform3D(0.25, -8.71967e-17, 8.71967e-17, 8.71967e-17, 0.25, -8.71967e-17, -8.71967e-17, 8.71967e-17, 0.25, -1.77058, 0.0256318, 0.417721)
+
+[node name="fence" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="1" instance=ExtResource("10_in4bn")]
 transform = Transform3D(-1.09278e-08, 0.25, 1.09278e-08, -3.81149e-24, -1.09278e-08, 0.25, 0.25, 1.09278e-08, 4.77671e-16, 0.0316762, 0.328237, 0.142015)
 
-[node name="Sedan" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="1" instance=ExtResource("11_lmmqn")]
+[node name="Sedan" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="2" instance=ExtResource("11_lmmqn")]
 transform = Transform3D(1, -6.66424e-31, 2.91303e-38, 0, -4.37114e-08, -1, 6.66424e-31, 1, -4.37114e-08, -0.129579, 0.0256317, 0.0841965)
 visible = false
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="2"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="3"]
 transform = Transform3D(1, 0, 0, 0, 0.643723, 0.765259, 0, -0.765259, 0.643723, 0, 17.4458, 19.0313)
 light_energy = 2.0
 shadow_enabled = true
 
-[node name="Ground" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="3" instance=ExtResource("5_odqk1")]
+[node name="Ground" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="4" instance=ExtResource("5_odqk1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163624, 0.0109992, -1.86674)
 
-[node name="CenterCamera3D" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="4" node_paths=PackedStringArray("centerObject") instance=ExtResource("7_mnc4x")]
+[node name="CenterCamera3D" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="5" node_paths=PackedStringArray("centerObject") instance=ExtResource("7_mnc4x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53852, 0.0146324, 2.58451)
-centerObject = NodePath("../fence")
+centerObject = NodePath("../tree2")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="5"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="6"]
 environment = SubResource("Environment_xvtem")
 
-[node name="FogVolume" type="FogVolume" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="6"]
+[node name="FogVolume" type="FogVolume" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="7"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 9, -0.0821598, 0.852535, -0.213425)
-visible = false
 shape = 0
 material = SubResource("FogMaterial_rq8do")
 

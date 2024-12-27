@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://utjc8ec3y3k6"]
+
+[ext_resource type="PackedScene" uid="uid://d4aciq6f8hymp" path="res://components/Models/Trees/tree2.glb" id="1_f3c63"]
+[ext_resource type="PackedScene" uid="uid://dqsvgwy451bmn" path="res://components/light/light.tscn" id="2_e5g8x"]
+
+[node name="ChristmasTree" instance=ExtResource("1_f3c63")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="Light" parent="." index="1" instance=ExtResource("2_e5g8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.412435, 1.59452, 2.50144)
+
+[node name="Light2" parent="." index="2" instance=ExtResource("2_e5g8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.403, 1.37243, 1.22754)
+
+[node name="Light3" parent="." index="3" instance=ExtResource("2_e5g8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34265, 2.42981, 1.96708)
+
+[node name="Light4" parent="." index="4" instance=ExtResource("2_e5g8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.403, 2.20771, 0.633)
+
+[node name="Light5" parent="." index="5" instance=ExtResource("2_e5g8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.134136, 3.3531, 1.96708)
+
+[node name="Light6" parent="." index="6" instance=ExtResource("2_e5g8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92621, 3.131, 0.633)
+
+[node name="Light7" parent="." index="7" instance=ExtResource("2_e5g8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.473703, 4.7443, 1.6378)
+
+[node name="Light8" parent="." index="8" instance=ExtResource("2_e5g8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58665, 4.5222, 0.303718)
