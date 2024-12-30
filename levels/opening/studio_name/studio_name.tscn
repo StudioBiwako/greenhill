@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cush84hmu2bh8"]
+[gd_scene load_steps=8 format=3 uid="uid://cush84hmu2bh8"]
 
 [ext_resource type="Script" path="res://levels/opening/studio_name/studio_name.gd" id="1_lfn3u"]
 [ext_resource type="Texture2D" uid="uid://c1mcj0xh6vdau" path="res://levels/opening/studio_name/sprites/Studio_Biwako.png" id="2_kq10s"]
-[ext_resource type="FontFile" uid="uid://cghprndmqayw3" path="res://commons/fonts/font.ttf" id="2_yiosw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iqo0r"]
 atlas = ExtResource("2_kq10s")
@@ -48,17 +47,6 @@ offset_right = 1943.0
 offset_bottom = 1092.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(453, 559)
+position = Vector2(963, 551)
 sprite_frames = SubResource("SpriteFrames_fmuys")
 frame_progress = 0.254457
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-texture_filter = 1
-offset_left = 1091.0
-offset_top = 550.0
-offset_right = 1780.0
-offset_bottom = 844.0
-theme_override_colors/default_color = Color(0.312757, 0.652567, 1, 1)
-theme_override_fonts/normal_font = ExtResource("2_yiosw")
-theme_override_font_sizes/normal_font_size = 42
-text = "This game is a work in progress"

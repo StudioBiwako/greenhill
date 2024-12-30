@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkv0svxoi85hg"]
+
+[ext_resource type="PackedScene" uid="uid://v8mwitd4ts2w" path="res://components/UIContainer/UIContainer.tscn" id="1_u2w8i"]
+[ext_resource type="PackedScene" uid="uid://bausul7p4frcx" path="res://components/Models/fences/fence.glb" id="2_2ai5q"]
+[ext_resource type="PackedScene" uid="uid://cc5tcvmhfg74c" path="res://components/Models/TestPlane/plane.tscn" id="4_q7ux5"]
+[ext_resource type="PackedScene" uid="uid://d2j7818fnc7g2" path="res://components/Models/Roads/highway/highway.glb" id="4_twlpb"]
+[ext_resource type="PackedScene" uid="uid://m8mqr5fyqgje" path="res://components/Cameras/centerCamera/CenterCamera.tscn" id="5_kylae"]
+[ext_resource type="PackedScene" uid="uid://c4gsfrcoqc0cm" path="res://components/Models/Cars/GLB format/suv.glb" id="6_55ti3"]
+
+[node name="CarToSchool" type="Node3D"]
+transform = Transform3D(0.25, -1.74393e-16, 1.03981e-24, 1.03981e-24, 2.98122e-09, 0.25, -1.74393e-16, -0.25, 2.98122e-09, 0.17899, 0, 0.148422)
+
+[node name="UIContainer" parent="." instance=ExtResource("1_u2w8i")]
+
+[node name="highway" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="0" instance=ExtResource("4_twlpb")]
+transform = Transform3D(-8.74228e-09, 8.74228e-09, 0.2, 1.11273e-08, 0.2, -8.74228e-09, -0.2, 1.11273e-08, -8.74228e-09, -1.34232, 0.0256316, -0.876825)
+
+[node name="highway2" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="1" instance=ExtResource("4_twlpb")]
+transform = Transform3D(-8.74228e-09, 8.74228e-09, 0.2, 1.11273e-08, 0.2, -8.74228e-09, -0.2, 1.11273e-08, -8.74228e-09, 0.394266, 0.0256316, -0.876825)
+
+[node name="highway3" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="2" instance=ExtResource("4_twlpb")]
+transform = Transform3D(-8.74228e-09, 8.74228e-09, 0.2, 1.11273e-08, 0.2, -8.74228e-09, -0.2, 1.11273e-08, -8.74228e-09, -3.09595, 0.0256316, -0.876825)
+
+[node name="fence" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="3" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -1.86807, 0.15755, -1.55386)
+
+[node name="fence2" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="4" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -1.53423, 0.15755, -1.55386)
+
+[node name="fence3" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="5" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -1.20053, 0.15755, -1.55386)
+
+[node name="fence4" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="6" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -0.866696, 0.15755, -1.55386)
+
+[node name="fence5" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="7" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -3.28193, 0.15755, -1.55386)
+
+[node name="fence6" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="8" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -2.94809, 0.15755, -1.55386)
+
+[node name="fence7" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="9" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -2.61439, 0.15755, -1.55386)
+
+[node name="fence8" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="10" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -2.28056, 0.15755, -1.55386)
+
+[node name="fence9" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="11" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -1.86807, 0.138024, -0.215288)
+
+[node name="fence10" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="12" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -1.53423, 0.138024, -0.215288)
+
+[node name="fence11" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="13" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -1.20053, 0.138024, -0.215288)
+
+[node name="fence12" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="14" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -0.866696, 0.138024, -0.215288)
+
+[node name="fence13" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="15" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -3.28193, 0.138024, -0.215288)
+
+[node name="fence14" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="16" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -2.94809, 0.138024, -0.215288)
+
+[node name="fence15" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="17" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -2.61439, 0.138024, -0.215288)
+
+[node name="fence16" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="18" instance=ExtResource("2_2ai5q")]
+transform = Transform3D(-3.93403e-09, 0.09, 3.93403e-09, 0, -3.93403e-09, 0.09, 0.09, 3.93403e-09, 1.71962e-16, -2.28056, 0.138024, -0.215288)
+
+[node name="suv" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="19" instance=ExtResource("6_55ti3")]
+transform = Transform3D(3.1238e-16, 8.74228e-09, 0.2, 1.11273e-08, 0.2, -8.74228e-09, -0.2, 1.11273e-08, -1.74008e-16, -1.79781, 0.0256316, -1.13143)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="20"]
+transform = Transform3D(1, 0, 0, 0, 0.643723, 0.765259, 0, -0.765259, 0.643723, 0, 17.4458, 19.0313)
+light_energy = 2.0
+shadow_enabled = true
+
+[node name="Ground" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="21" instance=ExtResource("4_q7ux5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163624, 0.0109992, -1.86674)
+
+[node name="CenterCamera3D" parent="UIContainer/SubViewportContainer/SubViewport/PLACE_CONTENT_IN_HERE" index="22" node_paths=PackedStringArray("centerObject") instance=ExtResource("5_kylae")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53852, 0.0146324, 2.58451)
+centerObject = NodePath("../suv")
+orbitDistance = 1.0
+
+[editable path="UIContainer"]
